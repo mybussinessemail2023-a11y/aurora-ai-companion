@@ -1,96 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Aurora Light Theme */
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 192 91% 50%;
+    --primary-foreground: 222 47% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 91%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 192 91% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Aurora Custom Colors */
+    --aurora-cyan: 192 91% 50%;
+    --aurora-purple: 263 70% 50%;
+    --aurora-green: 160 84% 39%;
+    --aurora-amber: 38 92% 50%;
+    --aurora-red: 0 84% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Glow Effects */
+    --glow-cyan: 0 0 30px hsl(192 91% 50% / 0.4);
+    --glow-purple: 0 0 30px hsl(263 70% 50% / 0.4);
+    --glow-green: 0 0 30px hsl(160 84% 39% / 0.4);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Chart colors */
+    --chart-1: 192 91% 50%;
+    --chart-2: 263 70% 50%;
+    --chart-3: 160 84% 39%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 220 15% 60%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 220 20% 97%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 192 91% 50%;
+    --sidebar-primary-foreground: 222 47% 5%;
+    --sidebar-accent: 263 70% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 192 91% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Aurora Dark Theme - Jarvis Inspired */
+    --background: 230 25% 6%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 230 25% 9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 230 25% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 192 91% 50%;
+    --primary-foreground: 230 25% 6%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 230 15% 18%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 230 15% 18%;
+    --input: 230 15% 18%;
+    --ring: 192 91% 50%;
+
+    --sidebar-background: 230 25% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 192 91% 50%;
+    --sidebar-primary-foreground: 230 25% 6%;
+    --sidebar-accent: 263 70% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 15% 18%;
+    --sidebar-ring: 192 91% 50%;
+
+    --chart-1: 192 91% 50%;
+    --chart-2: 263 70% 50%;
+    --chart-3: 160 84% 39%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 220 15% 60%;
   }
 }
 
@@ -99,7 +118,130 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    @apply dark;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  /* Aurora Glow Effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--aurora-cyan) / 0.3), 0 0 40px hsl(var(--aurora-cyan) / 0.2);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--aurora-purple) / 0.3), 0 0 40px hsl(var(--aurora-purple) / 0.2);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--aurora-green) / 0.3), 0 0 40px hsl(var(--aurora-green) / 0.2);
+  }
+
+  /* Text Glow */
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(var(--aurora-cyan) / 0.5), 0 0 20px hsl(var(--aurora-cyan) / 0.3);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 10px hsl(var(--aurora-purple) / 0.5), 0 0 20px hsl(var(--aurora-purple) / 0.3);
+  }
+
+  /* Gradient Backgrounds */
+  .bg-aurora-gradient {
+    background: linear-gradient(135deg, hsl(var(--aurora-cyan)) 0%, hsl(var(--aurora-purple)) 100%);
+  }
+
+  .bg-aurora-radial {
+    background: radial-gradient(ellipse at center, hsl(var(--aurora-cyan) / 0.1) 0%, transparent 70%);
+  }
+
+  /* Glass Effect */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-border {
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
+
+@layer components {
+  /* Pulse Animation for Status Orb */
+  @keyframes aurora-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--aurora-cyan) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--aurora-cyan) / 0.7), 0 0 60px hsl(var(--aurora-cyan) / 0.4);
+    }
+  }
+
+  .animate-aurora-pulse {
+    animation: aurora-pulse 2s ease-in-out infinite;
+  }
+
+  /* Breathing Animation */
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+
+  .animate-breathing {
+    animation: breathing 3s ease-in-out infinite;
+  }
+
+  /* Shimmer Animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--aurora-cyan) / 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Typing Dots Animation */
+  @keyframes typing-dot {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .animate-typing-1 {
+    animation: typing-dot 1.4s ease-in-out infinite;
+  }
+
+  .animate-typing-2 {
+    animation: typing-dot 1.4s ease-in-out infinite 0.2s;
+  }
+
+  .animate-typing-3 {
+    animation: typing-dot 1.4s ease-in-out infinite 0.4s;
   }
 }
